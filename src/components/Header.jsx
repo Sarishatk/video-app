@@ -8,7 +8,7 @@ function Header() {
         <Container>
         <Navbar.Brand >
           <Link className='fs-4' to={'/'}style={{textDecoration:'none',color:'white'}}>
-          <i className="fa-solid fa-cloud-arrow-up"></i>{" "}
+          <i className="fa-solid fa-cloud-arrow-up overflow-hidden"></i>{" "}
             Media Player
             </Link>
           </Navbar.Brand>

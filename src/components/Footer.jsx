@@ -31,13 +31,13 @@ function Footer() {
                 <h4>Contact Us</h4>
                 <div className='d-flex'>
                     <input className='form-control' type="email" placeholder='Enter your email'/>
-                 <div className='btn btn-primary ms-3'>subscribe</div>
+                 <div className='btn btn-primary ms-3'><i className="fa-duotone fa-solid fa-arrow-right"></i></div>
                 </div>
                 <div className='icons mt-3 d-flex justify-content-evenly fs-4'>
-                    <Link to={'https://getbootstrap.com/'} className='' style={{ textDecoration: 'none', color: 'white' }} ><i className="fa-brands fa-twitter"></i></Link>
-                    <Link to={'https://react-bootstrap.netlify.app/'} className='' style={{ textDecoration: 'none', color: 'white' }} ><i className="fa-brands fa-linkedin"></i></Link>
-                    <Link to={'https://www.npmjs.com/package/react-router-dom'} className='' style={{ textDecoration: 'none', color: 'white' }} ><i className="fa-brands fa-github"></i></Link>
-                    <Link to={'https://www.npmjs.com/package/react-router-dom'} className='' style={{ textDecoration: 'none', color: 'white' }} ><i className="fa-brands fa-facebook"></i></Link>
+                    <Link to={'https://getbootstrap.com/'} className='' style={{ textDecoration: 'none', color: 'white' }} ><i className="fa-brands fa-twitter overflow-hidden"></i></Link>
+                    <Link to={'https://react-bootstrap.netlify.app/'} style={{ textDecoration: 'none', color: 'white' }} ><i className="fa-brands fa-linkedin overflow-hidden"></i></Link>
+                    <Link to={'https://www.npmjs.com/package/react-router-dom'}  style={{ textDecoration: 'none', color: 'white' }} ><i class="fa-brands fa-github overflow-hidden"></i></Link>
+                    <Link to={'https://www.npmjs.com/package/react-router-dom'}  style={{ textDecoration: 'none', color: 'white' }} ><i className="fa-brands fa-facebook overflow-hidden"></i></Link>
 
             </div>
                 </div>

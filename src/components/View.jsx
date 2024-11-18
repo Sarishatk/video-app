@@ -1,10 +1,15 @@
 import React from 'react'
-
+import { Row, Col } from 'react-bootstrap'
+import VideCard from './VideCard'
 function View() {
   return (
-    <div>
+   <Row>
+      <Col sm={12} md={6} lg={4} xl={3} >
+     < VideCard/>
+      </Col>   
       
-    </div>
+
+       </Row>
   )
 }
 
