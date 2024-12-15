@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { Row, Col } from 'react-bootstrap'
 import VideCard from './VideCard'
 import { getAllvideo } from '../services/allAPI'
-function View() {
+function View({uploadVideoServerResponse}) {
 const [allVideos,setallVideos] = useState([])
-
+const [removeVideo,setremoveVideo] = useState(false)
   const uploadAllvideos  = async()=>{
     // make api call
     const {data} = await  getAllvideo()
@@ -12,9 +12,9 @@ const [allVideos,setallVideos] = useState([])
     
   }
   useEffect(()=>{
+    setremoveVideo(false)
     uploadAllvideos()
-  },[])
-  console.log(allVideos);
+  },[uploadVideoServerResponse,removeVideo])
   
   return (
    <Row>
@@ -22,7 +22,7 @@ const [allVideos,setallVideos] = useState([])
      allVideos.length>0?
      allVideos.map(video=>(
       <Col sm={12} md={6} lg={4} xl={3} >
-      < VideCard displayData={video}/>
+      < VideCard displayData={video} setremoveVideo={setremoveVideo}/>
        </Col>   
      ))
      :<p className='fw-bolder mt-3 fs-5 text-danger'>Nothing to display !!! </p>

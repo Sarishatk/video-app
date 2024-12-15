@@ -1,10 +1,12 @@
 import React from 'react'
 import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
+import { ToastContainer,toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Modal, Button } from 'react-bootstrap';
 import { uploadVideo } from '../services/allAPI';
 
-function Add() {
+function Add({setuploadVideoServerResponse}) {
   const [video, setVideo] = useState({
     id: "", caption: "", url: "", embadedlink: ""
   })
@@ -25,14 +27,19 @@ function Add() {
 const handleUpload = async ()=>{
  const {id,caption,url,embadedlink} = video
  if(!id|| !caption || !url || !embadedlink){
-  alert("please fill the form completely!!!")
+  toast.warning("please fill the form completely!!!")
  }else{
   const response = await uploadVideo (video)
   if(response.status>=200 && response.status<300){
-    alert(`"${response.data.caption}"video uploaded successfully`)
+    // set server response
+    setuploadVideoServerResponse(response.data)
+    toast.success(`"${response.data.caption}"video uploaded successfully`)
+    setVideo({    id: "", caption: "", url: "", embadedlink: ""
+    })
+    // hide modal
     handleClose()
   }else{
-    alert("please provide unique id for all videos !!!")
+    toast.error("uploading Error...perform operation after sometime  !!!")
   }
  }
 }
@@ -79,6 +86,8 @@ const handleUpload = async ()=>{
           <Button onClick={handleUpload} variant="primary">Upload</Button>
         </Modal.Footer>
       </Modal>
+      <ToastContainer position='top-center' theme='colored' autoClose={2000}/>
+      
     </>
   )
 }

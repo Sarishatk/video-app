@@ -6,7 +6,7 @@ function Footer() {
         <div className='d-flex justify-content-center align-items-center flex-column flex-wrap' style={{ width: '100%', height: '300px' ,marginLeft:"30px"}}>
             <div className="footer-content d-flex  justify-content-evenly   w-100">
                 <div className="website " style={{ width: '400px' }}>
-                    <h4><i className="fa-solid fa-cloud-arrow-up"></i>{" "}Media Player</h4>
+                    <h4><i className="fa-solid fa-cloud-arrow-up overflow-hidden"></i>{" "}Media Player</h4>
                     <h6>Designed and built with all the love in the world by the Bootstrap team with the help of our contributors.</h6>
                     <h6>Code licensed MIT, docs CC BY 3.0.</h6>
                     <p>Currently v5.3.3.</p>
@@ -34,7 +34,7 @@ function Footer() {
                  <div className='btn btn-primary ms-3'><i className="fa-duotone fa-solid fa-arrow-right"></i></div>
                 </div>
                 <div className='icons mt-3 d-flex justify-content-evenly fs-4'>
-                    <Link to={'https://getbootstrap.com/'} className='' style={{ textDecoration: 'none', color: 'white' }} ><i className="fa-brands fa-twitter overflow-hidden"></i></Link>
+                    <Link to={'https://getbootstrap.com/'} style={{ textDecoration: 'none', color: 'white' }} ><i className="fa-brands fa-twitter overflow-hidden"></i></Link>
                     <Link to={'https://react-bootstrap.netlify.app/'} style={{ textDecoration: 'none', color: 'white' }} ><i className="fa-brands fa-linkedin overflow-hidden"></i></Link>
                     <Link to={'https://www.npmjs.com/package/react-router-dom'}  style={{ textDecoration: 'none', color: 'white' }} ><i class="fa-brands fa-github overflow-hidden"></i></Link>
                     <Link to={'https://www.npmjs.com/package/react-router-dom'}  style={{ textDecoration: 'none', color: 'white' }} ><i className="fa-brands fa-facebook overflow-hidden"></i></Link>
