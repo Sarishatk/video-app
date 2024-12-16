@@ -34,13 +34,29 @@ export const deleteavideo = async(id)=>{
 
 export const addHistory= async(videoHistory)=>{
      // call post http request to http://localhost:4000/hidtory to add video histopry in  json server return response to videocard component
-    return await commonAPI("POST",`${serverURL}/categories`,videoHistory)
+    return await commonAPI("POST",`${serverURL}/history`,videoHistory)
 
 }
 // store video watching histroy to json server
 
 export const getHistroy= async()=>{
     // call post http request to http://localhost:4000/hidtory to add video histopry in  json server return response to watch history component
-   return await commonAPI("GET",`${serverURL}/categories`,"")
-
+   return await commonAPI("GET",`${serverURL}/history`,"")
 }
+
+export const saveCategory = async(body)=>{
+    // call post http request to http://localhost:4000/hidtory to add category histopry in  json server return response to watch catergory component
+    return await commonAPI("POST",`${serverURL}/categories`,body)
+}
+export const getCategory = async()=>{
+    // call post http request to http://localhost:4000/hidtory to get all category histopry in  json server return response to watch catergory component
+    return await commonAPI("GET",`${serverURL}/categories`,"")
+}
+export const deleteCategory = async(id)=>{
+    // call delete http request to http://localhost:4000/hidtory to delete all category histopry in  json server return response to watch catergory component
+    return await commonAPI("DELETE",`${serverURL}/categories/${id}`,[])
+}
+
+
+
+

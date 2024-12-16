@@ -38,11 +38,15 @@ function VideCard({ displayData, setremoveVideo }) {
     setremoveVideo(true)
 
   }
+  const dragStarted =(e,id)=>{
+    console.log("drag started");
+  e.dataTransfer.setData("cardId",id)    
+  }
   return (
     <>
       {
         displayData &&
-        <Card className='mb-3'>
+        <Card className='mb-3' draggable onDragStart={(e)=>dragStarted(e,displayData?.id)}>
           <Card.Img onClick={handleShow} style={{ height: '200px' }} className='w-100' variant="top" src={displayData?.url} />
           <Card.Body>
             <Card.Title className='d-flex  justify-content-between align-items-center'>
